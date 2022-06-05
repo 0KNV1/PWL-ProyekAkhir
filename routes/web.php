@@ -27,7 +27,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return redirect('/login');
 });
 
 Route::group(['middleware' => ['auth','verified']], function () {
