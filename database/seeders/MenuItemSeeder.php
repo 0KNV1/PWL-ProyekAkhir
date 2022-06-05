@@ -68,7 +68,7 @@ class MenuItemSeeder extends Seeder
                 ],
                 [
                     'name' => 'Produk List',
-                    'route' => 'produk-management/menu-item',
+                    'route' => 'produk-management/produk',
                     'permission_name' => 'produk.index',
                     'menu_group_id' => 5,
                 ],
