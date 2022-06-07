@@ -39,7 +39,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //
+        return view('produk.create');
     }
 
     /**
@@ -61,7 +61,6 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -72,7 +71,7 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('produk.edit');
     }
 
     /**
