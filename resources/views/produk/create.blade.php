@@ -42,21 +42,18 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="picture">Image</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input " id="customFile" name="picture">
-                                <label for="customFile" class="custom-file-label">Choose File</label>
-                            </div>
-                                @error('picture')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                            <label for="image">Input Image</label>
+                            <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image">
+                            @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <label for="descriptions">Deskripsi</label>
-                            <textarea name="descriptions" id="descriptions" class="form-control" placeholder="Product Description"></textarea>
-                            @error('descriptions')
+                            <label for="desc">Deskripsi</label>
+                            <textarea name="desc" id="desc" class="form-control @error('desc') is-invalid @enderror" placeholder="Product Description"></textarea>
+                            @error('desc')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProdukRequest;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -48,9 +50,17 @@ class ProdukController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProdukRequest $request)
     {
-        //
+        $image = uniqid().'.'.$request->file('image')->extension();
+        $request -> file('image')->move(public_path('assets/img/'),$image);
+        Produk::create([
+            'name' => $request['name'],
+            'price' => $request['price'],
+            'image' => $image,
+            'desc' => $request['desc'],
+        ]);
+        return redirect()->route('produk.index')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -92,8 +102,9 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Produk $produk)
     {
-        //
+        $produk ->delete();
+        return redirect()->route('produk.index')->with('success', 'Data Berhasil Dihapus');
     }
 }
