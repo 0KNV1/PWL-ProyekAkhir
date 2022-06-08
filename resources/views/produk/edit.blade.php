@@ -12,7 +12,7 @@
         <div class="section-body">
             <h2 class="section-title">Edit Product</h2>
             <div class="card">
-                <form action="{{ route('produk.update', $produk) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('produk.update', $produk->id) }}" method="post" enctype="multipart/form-data">
                     <div class="card-header">
                         <h4>Validasi Edit Data Product</h4>
                     </div>
@@ -42,19 +42,19 @@
                         <div class="form-group">
                             <label for="picture">Image</label>
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input " id="customFile" name="picture">
+                                <input type="file" class="custom-file-input " id="customFile" name="image">
                                 <label for="customFile" class="custom-file-label">Choose File</label>
                             </div>
-                            @error('picture')
+                            @error('image')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="descriptions">Deskripsi</label>
-                            <textarea name="descriptions" id="descriptions" class="form-control" placeholder="Product Description">{{$produk->descriptions}}</textarea>
-                            @error('descriptions')
+                            <label for="desc">Deskripsi</label>
+                            <textarea name="desc" id="desc" class="form-control" placeholder="Product Description">{{$produk->descriptions}}</textarea>
+                            @error('desc')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

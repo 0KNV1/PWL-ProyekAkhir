@@ -79,9 +79,9 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Produk $produk)
     {
-        return view('produk.edit');
+        return view('produk.edit',compact('produk'));
     }
 
     /**
@@ -91,9 +91,22 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProdukRequest $request, Produk $produk)
     {
-        //
+
+        $image = uniqid().'.'.$request->file('image')->extension();
+        $request -> file('image')->move(public_path('assets/img/'),$image);
+
+
+        $produk->update([
+            'name' => $request['name'],
+            'price' => $request['price'],
+            'image' => $image,
+            'desc' => $request['desc'],
+        ]);
+
+        return redirect()->route('produk.index')->with('success', 'Data Berhasil Diupdate');
+
     }
 
     /**
