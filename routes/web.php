@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\Menu\MenuGroupController;
 use App\Http\Controllers\Menu\MenuItemController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleAndPermission\AssignPermissionController;
 use App\Http\Controllers\RoleAndPermission\AssignUserToRoleController;
 use App\Http\Controllers\RoleAndPermission\ExportPermissionController;
@@ -33,7 +35,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('/dashboard', function () {
         return view('home', ['users' => User::get(),]);
-    });
+    })->name('dashboard');
     //user list
 
     Route::prefix('user-management')->group(function () {
@@ -41,6 +43,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::post('import', [UserController::class, 'import'])->name('user.import');
         Route::get('export', [UserController::class, 'export'])->name('user.export');
         Route::get('demo', DemoController::class)->name('user.demo');
+
     });
 
     Route::prefix('menu-management')->group(function () {
@@ -80,3 +83,7 @@ Route::prefix('produk-management')->group(function(){
     Route::post('import', [ProdukController::class, 'import'])->name('produk.import');
     Route::get('export', [ProdukController::class, 'export'])->name('produk.export');
 });
+//update profile
+Route::resource('profile' ,ProfileController::class)->only('update', 'edit');
+// add to cart
+Route::resource('cart' , CartController::class);
