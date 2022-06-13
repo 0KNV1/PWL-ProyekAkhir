@@ -51,6 +51,15 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label for="background">Input Background Image</label>
+                            <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="background" name="background">
+                            @error('background')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="desc">Deskripsi</label>
                             <textarea name="desc" id="desc" class="form-control @error('desc') is-invalid @enderror" placeholder="Product Description"></textarea>
                             @error('desc')

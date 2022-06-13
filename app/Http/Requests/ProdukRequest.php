@@ -27,6 +27,7 @@ class ProdukRequest extends FormRequest
             'name' => 'required|string',
             'price' => 'required|numeric',
             'image' => 'required|image:png,jpg,jpeg',
+            'background' => 'required|image:png,jpg,jpeg',
             'desc' => 'required',
         ];
     }

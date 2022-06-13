@@ -54,10 +54,15 @@ class ProdukController extends Controller
     {
         $image = uniqid().'.'.$request->file('image')->extension();
         $request -> file('image')->move(public_path('assets/img/'),$image);
+
+        $background = uniqid().'.'.$request->file('background')->extension();
+        $request -> file('background')->move(public_path('assets/img/'),$image);
+
         Produk::create([
             'name' => $request['name'],
             'price' => $request['price'],
             'image' => $image,
+            'background' => $background,
             'desc' => $request['desc'],
         ]);
         return redirect()->route('produk.index')->with('success', 'Data Berhasil Ditambahkan');
@@ -97,11 +102,15 @@ class ProdukController extends Controller
         $image = uniqid().'.'.$request->file('image')->extension();
         $request -> file('image')->move(public_path('assets/img/'),$image);
 
+        $background = uniqid().'.'.$request->file('background')->extension();
+        $request -> file('background')->move(public_path('assets/img/'),$image);
+
 
         $produk->update([
             'name' => $request['name'],
             'price' => $request['price'],
             'image' => $image,
+            'background' => $background,
             'desc' => $request['desc'],
         ]);
 

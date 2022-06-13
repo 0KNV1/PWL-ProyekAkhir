@@ -40,12 +40,18 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="picture">Image</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input " id="customFile" name="image">
-                                <label for="customFile" class="custom-file-label">Choose File</label>
-                            </div>
+                            <label for="image">Input Image</label>
+                            <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image">
                             @error('image')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="background">Input Background Image</label>
+                            <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="background" name="background">
+                            @error('background')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

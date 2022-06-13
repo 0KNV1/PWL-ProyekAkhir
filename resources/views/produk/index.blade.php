@@ -75,6 +75,7 @@
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th>Image</th>
+                                            <th>Image Background</th>
                                             <th>description</th>
                                             <th>Created At</th>
                                             <th class="text-right">Action</th>
@@ -85,6 +86,7 @@
                                                 <td>{{ $produk->name }}</td>
                                                 <td>{{ $produk->price}}</td>
                                                 <td>{{ $produk->image}}</td>
+                                                <td>{{ $produk->background}}</td>
                                                 <td>{{ $produk->desc}}</td>
                                                 <td>{{ $produk->created_at}}</td>
                                                 <td class="text-right">
