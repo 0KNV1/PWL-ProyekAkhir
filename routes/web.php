@@ -29,7 +29,13 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return view('user-template.index');
+});
+Route::get('/produk', function () {
+    return view('produk-template.produk');
+});
+Route::get('/addCart', function () {
+    return view('cart.cart');
 });
 
 Route::group(['middleware' => ['auth','verified']], function () {

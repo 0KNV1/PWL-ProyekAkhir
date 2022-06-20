@@ -58,7 +58,7 @@ body {
 /* Landing Page & Produk Page */
 /* Hero Section */
 .jumbotron {
-  background-image: url(../img/jumbotronBG.jpg);
+  background-image: url('/assets/img/template/jumbotronBG.jpg');
   background-size: cover;
   height: 100vh;
   background-repeat: no-repeat;
