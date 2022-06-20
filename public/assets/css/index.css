@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+body {
+  background-color: #eeeeee;
+  font-family: 'Quicksand', sans-serif;
+  /* position: relative; */
+}
+
+/* Navbar */
+.navbar {
+  /* position: relative; */
+  background-color: #fff;
+  box-shadow: 0 2px 0 0 #cac7c7;
+  font-weight: 500 !important;
+  font-size: 17px;
+}
+.navbar button span {
+  color: #000 !important;
+}
+
+.navbar-nav li a {
+  color: #000 !important;
+}
+
+.navbar-nav li .register {
+  background-color: #000;
+  color: #fff !important;
+  border-radius: 7px;
+}
+
+.navbar-nav li .register:hover,
+.navbar-nav li .register:focus-within {
+  background-color: #3d5a73;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand img {
+  width: 70px;
+  height: 61px;
+}
+.navbar-nav li .nav-hov:hover,
+.cart .nav-link span:hover {
+  color: #3d5a73 !important;
+  font-weight: 600;
+  /* padding-right: 5.5px !important; */
+}
+
+.cart .nav-link {
+  position: absolute;
+  color: #000 !important;
+}
+
+.navbar-nav .about {
+  position: relative;
+}
+
+/* End Of Navbar */
+
+/* Landing Page & Produk Page */
+/* Hero Section */
+.jumbotron {
+  background-image: url(../img/jumbotronBG.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+.jumbotron img {
+  height: 100vh;
+}
+.jumbotron .desc {
+  display: flex;
+  color: #fff;
+  align-items: center;
+}
+/* End of Hero */
+
+/* Product */
+
+.title .fw {
+  font-weight: 500 !important;
+}
+
+.produk {
+  max-width: 18rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  transition: transform 500ms ease;
+  margin: 0 auto !important;
+}
+/* .card1 {
+  background-image: url(../img/bgKopi.jpg);
+} */
+/* .card2 {
+  background-image: url(../img/bgRedVelvet.jpg);
+}
+.card3 {
+  background-image: url(../img/bgGreenTea.jpg);
+}
+.card4 {
+  background-image: url(../img/bgTaro.jpg);
+} */
+.produk:hover,
+.produk:focus-within {
+  transform: scale(1.05);
+}
+.produk-title {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500 !important;
+}
+.produk-text {
+  font-weight: 300 !important;
+  color: #000;
+  text-align: justify;
+  line-height: 25px;
+  height: calc(3 * 25px);
+  overflow: hidden;
+  position: relative;
+}
+.produk-text::after {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-right: 2px;
+  background-color: #fff;
+}
+.produk img {
+  max-width: 299px;
+  max-height: 222px;
+  object-fit: contain;
+}
+
+.card-body {
+  background-color: #fff;
+}
+
+.produk .btn {
+  background-color: #000;
+  border-radius: 7px;
+}
+.produk .btn:hover,
+.produk .btn:focus {
+  background-color: #3d5a73;
+  transition: background-color 0.3s ease;
+}
+/* End of Product */
+/* End of Landing Page & Produk Page */
+
+/* Detail Produk~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* Content Detail Produk*/
+.kolom {
+  margin: 95px 0;
+}
+
+.img img {
+  border-radius: 10px;
+}
+.judul {
+  font-weight: 700;
+}
+.harga {
+  font-weight: 600;
+}
+.desc {
+  font-size: 18px !important;
+  font-weight: 300;
+  text-align: justify;
+}
+.arrow {
+  justify-content: end !important;
+  align-items: center !important;
+}
+.arrow a {
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-decoration: none !important;
+  color: #000;
+  font-size: 1.2rem !important;
+}
+.arrow a:hover,
+.arrow a:focus-within {
+  color: #fff;
+  background-color: #3d5a73;
+}
+/* End of content */
+
+/* Quantity */
+.qty {
+  max-width: 140px !important;
+  background-color: #fff;
+  justify-content: space-around;
+  padding: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 #949393;
+}
+.qty input {
+  max-width: 50px;
+  border: none;
+  text-align: center;
+  appearance: none;
+  outline: none;
+}
+.qty button {
+  background-color: #fff;
+  border-radius: 50%;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  overflow: hidden;
+}
+.qty button:active {
+  background-color: transparent;
+  transform: scale(1.5);
+}
+.stok {
+  padding-top: 8px;
+}
+/* End of Quantity */
+
+/* Tambah Keranjang */
+.scart button {
+  background-color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 #949393;
+  font-weight: 500;
+  transition: all 500ms ease;
+}
+
+.scart button:hover,
+.scart button:focus-within {
+  background-color: #3d5a73;
+  color: #fff;
+}
+.scart button:active {
+  box-shadow: none;
+  opacity: 0.8;
+}
+/* End of Tambah Keranjang */
+
+/* End Of Detail Produk ~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Cart ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.baris {
+  min-height: 70vh;
+}
+
+.col-back a {
+  color: #000;
+  text-decoration: none;
+}
+.col-back a i {
+  margin-right: 5px;
+}
+.col-back a:hover {
+  color: #3d5a73;
+}
+.cart-img {
+  max-width: 5em;
+}
+.cart-qty {
+  position: relative;
+  max-width: 100% !important;
+  max-height: 40px;
+  background-color: #fff;
+  justify-content: space-around;
+}
+.cart-qty button {
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  user-select: none;
+}
+
+.cart-qty input {
+  max-width: 50%;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  appearance: none;
+  outline: none;
+  font-weight: 500;
+}
+.cart-qty button:active {
+  background-color: #3d5a73;
+}
+.card-ftr {
+  background-color: #fff;
+  justify-content: space-between;
+  margin: 0 2em;
+}
+.card-ftr button {
+  text-decoration: none;
+  color: #000;
+  background-color: transparent;
+  border: none;
+}
+.card-ftr button:hover,
+.card-ftr button:focus-within {
+  font-weight: 600;
+  color: #3d5a73;
+  background-color: #fff;
+  border: none !important;
+  box-shadow: none;
+}
+.card-ftr p span {
+  font-weight: 600;
+}
+.card-ftr button:active {
+  border: none;
+  box-shadow: none;
+}
+.checkout {
+  background-color: #fff;
+}
+
+.checkout button {
+  width: 100%;
+  height: 2.5em;
+  border-radius: 10px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 200ms ease-in-out;
+}
+.checkout button:hover {
+  opacity: 0.8;
+}
+.checkout button:active {
+  transform: scale(0.95);
+}
+/* End of Cart ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Order Summary ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.invoice {
+  position: absolute;
+  right: 0;
+}
+.order-header {
+  background-color: #fff;
+}
+.table-active {
+  background-color: #3d5a73;
+  color: #fff;
+}
+/* End of Order Summary~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Modal ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.btn-close:active,
+.btn-close:focus-within,
+.modal-footer button:active,
+.modal-footer button:focus-within {
+  box-shadow: none !important;
+  border: none;
+}
+.modal-footer button:active,
+.modal-footer button:focus-within {
+  box-shadow: none !important;
+  border: none !important;
+}
+.modal-footer button:hover {
+  background-color: #3d5a73;
+}
+.modal-footer .btn-primary {
+  background-color: #000;
+}
+.checkout button {
+  width: 100%;
+}
+/* End of Modal~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Footer */
+
+.footer {
+  background-color: #fff;
+  max-height: 240px;
+  line-height: 1.8;
+  padding-bottom: 15rem;
+  /* position: absolute;
+  bottom: 0; */
+
+  width: 100%;
+}
+
+.footer .img,
+.footer img {
+  max-height: 200px;
+  transform: scale(0.94);
+}
+
+.footer .about h4 {
+  font-weight: bold !important;
+}
+.footer .about a {
+  text-decoration: none !important;
+  color: #000;
+  font-size: 17px;
+}
+
+.footer .kontak h4 {
+  font-weight: bold;
+}
+.footer .kontak a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+}
+.footer a:hover,
+.footer a:focus-within {
+  color: #3d5a73;
+}
+.footer .about,
+.footer .kontak {
+  position: relative;
+}
+
+/* End of Footer */
+
+/* desktop */
+@media (min-width: 1400px) {
+  .navbar-nav .about {
+    /* left: -30px; */
+    margin-left: 25px;
+  }
+  .cart .nav-link {
+    left: 75%;
+    bottom: 17px;
+  }
+  .lr {
+    position: relative;
+  }
+  /* Landing Page  */
+  .jumbotron img {
+    max-width: 600px;
+  }
+  .jumbotron .desc {
+    margin-left: 80px !important;
+  }
+  /* End of Landing Page */
+
+  /* Detail Produk */
+  .img {
+    padding-right: 105px;
+  }
+  /* End of detail Produk */
+  .footer .about,
+  .footer .kontak {
+    right: -650px;
+  }
+}
+@media (max-width: 1399px) {
+  .navbar-nav .about {
+    /* left: -30px; */
+    margin-left: 25px;
+  }
+  .cart .nav-link {
+    left: 73%;
+    bottom: 17px;
+  }
+  .lr {
+    position: relative;
+  }
+  /* Landing Page */
+  .jumbotron img {
+    max-width: 600px;
+  }
+  .jumbotron .desc {
+    margin-left: 100px !important;
+  }
+  /* End of Landing Page */
+
+  /* Detail Produk */
+  .img {
+    padding-right: 105px;
+  }
+  /* End of detail Produk */
+  .footer .about,
+  .footer .kontak {
+    right: -500px;
+  }
+}
+@media (max-width: 1199px) {
+  .cart .nav-link {
+    left: 70%;
+  }
+  .navbar-nav .about,
+  .navbar-nav .nav-hov {
+    margin-left: 5px !important;
+    /* margin-right: 5px; */
+  }
+
+  /* Landing Page */
+  .jumbotron .desc {
+    margin-left: 13px !important;
+  }
+  .jumbotron img {
+    max-width: 100%;
+  }
+  /* End of Landing Page */
+
+  /* Detail Produk */
+  .img {
+    padding-right: 105px;
+  }
+  /* End of detail Produk */
+
+  .footer .about,
+  .footer .kontak {
+    right: -270%;
+  }
+}
+/* End of Desktop */
+
+/* ipad */
+@media (max-width: 992px) {
+  .cart .nav-link {
+    top: 15px;
+    left: 38.5rem;
+    margin-right: 15px;
+  }
+  .navbar-nav .about,
+  .navbar-nav .nav-hov {
+    margin-left: 5px !important;
+    /* margin-right: 5px; */
+  }
+  /* Landing Page */
+  .jumbotron img {
+    max-width: 100%;
+  }
+  .jumbotron .desc {
+    padding: 0;
+  }
+  .navbar-nav .about {
+    position: relative;
+    left: -2px;
+  }
+  /* End of Landing Page */
+
+  /* Detail produk */
+  .img {
+    padding-right: 0;
+  }
+  .judul,
+  .harga,
+  .desc {
+    padding-left: 3rem;
+  }
+  .kolqty {
+    margin-left: 3rem;
+  }
+  .scart {
+    padding-left: 3rem;
+  }
+  /* End of detail Produk */
+  .footer .about,
+  .footer .kontak {
+    right: -150px;
+  }
+}
+/* End of Ipad */
+
+/* mobile */
+@media (max-width: 767px) {
+  .navbar-nav .about,
+  .navbar-nav .nav-hov {
+    margin-left: 5px !important;
+    /* margin-right: 5px; */
+  }
+  /* Landing Page */
+  .jumbotron img {
+    width: 100%;
+  }
+  .jumbotron .desc {
+    padding-left: 1rem;
+    margin-left: 0 !important;
+  }
+  .produk {
+    margin-bottom: 40px !important;
+  }
+  /* End of Landing Page */
+
+  /* Detail Produk */
+  .arrow a {
+    visibility: hidden;
+    position: absolute;
+    margin-bottom: 45px;
+  }
+  .img {
+    justify-content: center !important;
+  }
+  .kolqty {
+    max-width: 80%;
+    margin-left: 1rem;
+    /* display: block !important; */
+  }
+  .stok {
+    margin-left: 1rem;
+  }
+  .rowstok {
+    display: flex !important;
+    flex-flow: column-reverse;
+  }
+  .judul,
+  .harga,
+  .desc,
+  .scart {
+    padding-left: 1rem;
+  }
+  /* End of detail Produk */
+  .footer {
+    max-height: 320px;
+  }
+  .footer .img,
+  .footer img {
+    max-height: 100px;
+    transform: scale(0.94);
+  }
+  .footer .img img {
+    position: relative;
+    left: 33%;
+    margin-left: 15px;
+  }
+  .footer .about {
+    position: absolute;
+    left: 50%;
+    margin-top: 25px;
+  }
+
+  .footer .kontak {
+    position: absolute !important;
+    right: 60% !important;
+    margin-left: 30px !important;
+  }
+  .footer .about a,
+  .footer .kontak a {
+    font-size: 15px;
+  }
+  .footer .about,
+  .footer .kontak {
+    right: 0;
+  }
+}
+@media (max-width: 576px) {
+  .cart .nav-link {
+    left: 65%;
+    margin-right: 15px;
+    right: 0;
+    max-width: 20px;
+  }
+  /* Landing Page */
+  .jumbotron {
+    position: relative;
+  }
+  .jumbotron img {
+    visibility: hidden;
+    position: relative;
+  }
+  .jumbotron .desc {
+    position: absolute;
+    top: 50%;
+  }
+  /* End of Landing Page */
+}
+/* End of Mobile */
+
+/* Hover */
+@media (hover) {
+  .produk .card-img-top {
+    transform: scale(1.75) translateY(30%);
+    transition: transform 500ms ease;
+  }
+  /* .card3 .card-img-top {
+    transform: scale(1.5) translateY(32%);
+    transition: transform 500ms ease;
+  }
+  .card2 .card-img-top {
+    transform: scale(1.5) translateY(37%);
+    transition: transform 500ms ease;
+  }
+  .card4 .card-img-top {
+    transform: scale(1.5) translateY(30%);
+    transition: transform 500ms ease;
+  } */
+  .produk-body {
+    transform: translateY(100%);
+    transition: transform 500ms ease;
+  }
+  .produk:hover .produk-body,
+  .produk:focus-within .produk-body {
+    transform: translateY(0);
+  }
+  .produk:focus-within .card-body {
+    transition-duration: 0ms;
+  }
+  .produk:hover .card-img-top,
+  .produk:focus-within .card-img-top {
+    transform: scale(1) translateY(0);
+  }
+  .produk:focus-within .card-img-top {
+    transition-duration: 0ms;
+  }
+}
+/* End Of Hover */
