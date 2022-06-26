@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('image');
             $table->string('background');
+            $table ->String('stok');
             $table->longText('desc')->nullable();
             $table->timestamps();
         });

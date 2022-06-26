@@ -63,6 +63,7 @@ class ProdukController extends Controller
             'price' => $request['price'],
             'image' => $image,
             'background' => $background,
+            'stok' => $request['stok'],
             'desc' => $request['desc'],
         ]);
         return redirect()->route('produk.index')->with('success', 'Data Berhasil Ditambahkan');
@@ -111,6 +112,7 @@ class ProdukController extends Controller
             'price' => $request['price'],
             'image' => $image,
             'background' => $background,
+            'stok' => $request['stok'],
             'desc' => $request['desc'],
         ]);
 

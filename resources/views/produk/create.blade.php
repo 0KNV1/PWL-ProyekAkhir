@@ -60,6 +60,16 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label for="stok">Stok</label>
+                            <input type="number" class="form-control @error('stok') is-invalid @enderror" id="stok"
+                                name="stok" placeholder="Enter Stok Produk" value="{{ old('stok') }}">
+                            @error('stok')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="desc">Deskripsi</label>
                             <textarea name="desc" id="desc" class="form-control @error('desc') is-invalid @enderror" placeholder="Product Description"></textarea>
                             @error('desc')

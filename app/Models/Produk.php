@@ -15,6 +15,7 @@ class Produk extends Model
         'price',
         'image',
         'background',
+        'stok',
         'desc',
     ];
 }
