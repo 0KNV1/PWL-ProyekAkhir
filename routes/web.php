@@ -34,6 +34,18 @@ Route::get('/', function () {
 Route::get('/produk', function () {
     return view('produk-template.produk');
 });
+Route::get('/detail-kopi', function () {
+    return view('detail.detailEsKopiSusu');
+});
+Route::get('/detail-greentea', function () {
+    return view('detail.greenTea');
+});
+Route::get('/detail-redvelvet', function () {
+    return view('detail.redVelvet');
+});
+Route::get('/detail-taro', function () {
+    return view('detail.taro');
+});
 Route::get('/addCart', function () {
     return view('cart.cart');
 });

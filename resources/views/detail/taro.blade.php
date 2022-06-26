@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row px-0 mx-0 kolom">
           <div class="col-lg-6 col-md-5 d-flex justify-content-end img">
-            <img src="{{asset('/assets/img/template/Taro.jpg')}}" alt="EsKopiSusu" width="280px" height="500px" />
+            <img src="{{asset('/assets/img/template/Taro.png')}}" style="background-image: url(/assets/img/template/bgTaro.jpg)" alt="Taro Latte" width="280px" height="500px" />
           </div>
           <div class="col-lg-5 col-md-6 pt-5">
             <div class="row">
