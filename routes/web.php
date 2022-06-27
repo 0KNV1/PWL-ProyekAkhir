@@ -17,6 +17,8 @@ use App\Http\Controllers\RoleAndPermission\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProdukController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,12 +30,13 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('user-template.index');
-});
-Route::get('/produk', function () {
-    return view('produk-template.produk');
-});
+// Route::get('/', function () {
+//     return view('user-template.index');
+// });
+
+Route::get('/', [UserProdukController::class,'index']);
+Route::get('/produk', [UserProdukController::class,'produk']);
+
 Route::get('/detail-kopi', function () {
     return view('detail.detailEsKopiSusu');
 });

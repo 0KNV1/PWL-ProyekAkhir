@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group">
                             <label for="background">Input Background Image</label>
-                            <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="background" name="background">
+                            <input type="file" class="form-control-file @error('background') is-invalid @enderror" id="background" name="background">
                             @error('background')
                                 <div class="invalid-feedback">
                                     {{ $message }}

@@ -25,17 +25,19 @@
       </div>
       <!-- Row for card -->
       <div class="row px-0 mx-0">
+        @foreach ($produks as $produk)
         <div class="col-lg-3 col-md-5 mb-md-5 mx-md-auto">
-          <div class="card ms-4 card1 produk" style="background-image: url(/assets/img/template/bgKopi.jpg)">
-            <img src="{{asset('assets/img/template/kopisusu.png')}}" alt="kopiSusu" class="card-img-top" />
+          <div class="card ms-4 card1 produk" style="background-image: url({{asset('/assets/img/'.$produk->background)}})">
+            <img src="{{asset('assets/img/'.$produk->image)}}" alt="kopiSusu" class="card-img-top" />
             <div class="card-body produk-body">
-              <h4 class="card-title produk-title">Es Kopi Susu</h4>
-              <p class="card-text produk-text" style="font-weight: 10">Es Kopi Susu adalah minuman yang terbuat dari espresso, susu UHT dan susu kental manis. Minuman ini biasanya disajikan dengan gelas plastik bertutup .</p>
+              <h4 class="card-title produk-title">{{$produk->name}}</h4>
+              <p class="card-text produk-text" style="font-weight: 10">{{$produk->desc}}</p>
               <a href="page/detail/detailEsKopiSusu.html" class="btn btn-primary">Lihat Produk</a>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-5 mb-md-5 mx-md-auto">
+          @endforeach
+        {{-- <div class="col-lg-3 col-md-5 mb-md-5 mx-md-auto">
           <div class="card ms-4 card2 produk" style="background-image: url(/assets/img/template/bgRedVelvet.jpg)">
             <img src="{{asset('assets/img/template/RedVelvet.png')}}" alt="Red Velvet" class="card-img-top" />
             <div class="card-body produk-body">
@@ -73,7 +75,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </section>
     <!-- End of Product -->
 

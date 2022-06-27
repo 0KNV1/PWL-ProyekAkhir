@@ -56,7 +56,7 @@ class ProdukController extends Controller
         $request -> file('image')->move(public_path('assets/img/'),$image);
 
         $background = uniqid().'.'.$request->file('background')->extension();
-        $request -> file('background')->move(public_path('assets/img/'),$image);
+        $request -> file('background')->move(public_path('assets/img/'),$background);
 
         Produk::create([
             'name' => $request['name'],
@@ -104,7 +104,7 @@ class ProdukController extends Controller
         $request -> file('image')->move(public_path('assets/img/'),$image);
 
         $background = uniqid().'.'.$request->file('background')->extension();
-        $request -> file('background')->move(public_path('assets/img/'),$image);
+        $request -> file('background')->move(public_path('assets/img/'),$background);
 
 
         $produk->update([

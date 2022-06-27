@@ -1,9 +1,15 @@
 <!-- Navbar  -->
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="{{asset('assets/img/template/Logo Raga Sukma.png')}}" alt="Logo" /></a>
+      <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('assets/img/template/Logo Raga Sukma.png')}}" alt="Logo" /></a>
       <div class="cart">
-        <a class="nav-link me-lg-4 pt-3" href="page/cart/cart.html"><span class="material-symbols-outlined"> shopping_cart </span></a>
+        @if (Route::has('login'))
+            {{-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
+                @auth
+                <a class="nav-link me-lg-4 pt-3" href="page/cart/cart.html"><span class="material-symbols-outlined"> shopping_cart </span></a>
+                @endauth
+
+        @endif
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,16 +21,16 @@
             <a class="nav-link nav-hov about" aria-current="page" href="#">Tentang Kami</a>
           </li>
           <li class="nav-item pt-2 ms-lg-3">
-            <a class="nav-link nav-hov" aria-current="page" href="page/produk/produk.html">Produk</a>
+            <a class="nav-link nav-hov" aria-current="page" href="{{url('/produk')}}">Produk</a>
           </li>
         </ul>
 
         <ul class="navbar-nav ms-auto">
           <li class="nav-item lr">
-            <a class="nav-link me-lg-4 nav-hov" href="auth/login.html">Login</a>
+            <a class="nav-link me-lg-4 nav-hov" href="{{url('/login')}}">Login</a>
           </li>
           <li class="nav-item lr">
-            <a class="nav-link register px-3" href="auth/register.html">Register</a>
+            <a class="nav-link register px-3" href="{{url('/register')}}">Register</a>
           </li>
         </ul>
       </div>
