@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserProdukController;
+use App\Models\Produk;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,9 @@ Route::get('/addCart', function () {
 
 Route::group(['middleware' => ['auth','verified']], function () {
     Route::get('/dashboard', function () {
-        return view('home', ['users' => User::get(),]);
+        return auth()->user()->hasRole('super-admin')?view('home', ['users' => User::get(),])
+        :(auth()->user()->hasRole('user')?view ('user-template.index',['produks' => Produk::get(),] ):back()) ;
+
     })->name('dashboard');
     //user list
 
