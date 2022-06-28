@@ -111,4 +111,5 @@ Route::prefix('produk-management')->group(function(){
 //update profile
 Route::resource('profile' ,ProfileController::class)->only('update', 'edit');
 // add to cart
-Route::resource('cart' , CartController::class);
+Route::post('add-to-cart/{produk}', [CartController::class, 'index'])->name('item.add-to-cart');
+Route::delete('delete-cart/{cart}', [CartController::class, 'destroy'])->name('item.delete-cart');

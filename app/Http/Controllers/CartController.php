@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Produk;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -12,9 +14,16 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Produk $produk)
     {
-        //
+        // dd($request);
+        Cart::Create([
+            'produk_id' => $produk->id,
+            'user_id' => auth()->id(),
+            'quantity' => $request->quantity
+        ]);
+
+        return view('cart.cart')->with('success', 'Berhasil menambah item ke dalam keranjang');
     }
 
     /**
@@ -80,6 +89,7 @@ class CartController extends Controller
      */
     public function destroy(Cart $cart)
     {
-        //
+        $cart->delete();
+        return view('detail.index')->with('success', 'Berhasil menghapus item di keranjang');
     }
 }

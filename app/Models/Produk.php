@@ -18,4 +18,9 @@ class Produk extends Model
         'stok',
         'desc',
     ];
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
 }

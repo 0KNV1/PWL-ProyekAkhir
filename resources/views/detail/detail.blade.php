@@ -35,7 +35,15 @@
               </div>
             </div>
             <div class="scart mt-4">
-              <button>Tambah Keranjang</button>
+
+                <form action="{{ route('item.add-to-cart', $produks->id) }}" method="post">
+                    @csrf
+                    <label for="" class="form-label">{{ $produks->name }}</label>
+                    <input type="number" class="form-control mb-2" name="quantity" value="0">
+                    <button type="submit" class="btn btn-primary">Add to cart</button>
+                </form>
+                <hr>
+
             </div>
           </div>
         </div>
