@@ -52,7 +52,9 @@ body {
 .navbar-nav .about {
     position: relative;
 }
-
+.dropdown img {
+    width: 2em;
+}
 /* End Of Navbar */
 
 /* Landing Page & Produk Page */

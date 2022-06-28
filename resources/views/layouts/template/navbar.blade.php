@@ -26,12 +26,53 @@
         </ul>
 
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item lr">
-            <a class="nav-link me-lg-4 nav-hov" href="{{url('/login')}}">Login</a>
-          </li>
-          <li class="nav-item lr">
-            <a class="nav-link register px-3" href="{{url('/register')}}">Register</a>
-          </li>
+            @guest
+                @if (Route::has('login'))
+                    <li class="nav-item lr">
+                        <a class="nav-link me-lg-4 nav-hov" href="{{url('/login')}}">Login</a>
+                    </li>
+                @endif
+                @if (Route::has('register'))
+                    <li class="nav-item lr">
+                        <a class="nav-link register px-3" href="{{url('/register')}}">Register</a>
+                    </li>
+                @endif
+            @else
+            {{-- <li class="dropdown"><a href="#" data-toggle="dropdown"
+                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <img alt="image" src="/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+                <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                    class="dropdown-item has-icon text-danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                    style="display: none;">
+                    @csrf
+                </form>
+            </div>
+            </li> --}}
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-link-lg" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img alt="image" src="/assets/img/avatar/avatar-1.png" class="rounded-circle me-1">
+                    <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li>
+                        <a href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                         </form>
+                    </li>
+                </ul>
+            </li>
+            @endguest
         </ul>
       </div>
     </div>
