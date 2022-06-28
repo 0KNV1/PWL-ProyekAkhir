@@ -23,9 +23,11 @@
             <div class="row my-0 px-0 mx-0 rowstok">
               <div class="col-lg-4 col-md-6 mt-2 px-0 kolqty">
                 <div class="d-flex qty me-lg-3 me-md-3">
+                    <form action="{{ route('item.add-to-cart', $produks->id) }}" method="post">
+
                   <!-- <span onclick="DecreaseCount(event,this)">-</span> -->
                   <button id="minus" onclick="DecreaseCount(event,this)">-</button>
-                  <input type="text" value="1" data-toggle="input" id="input" />
+                  <input type="text" name="quantity" value="1" data-toggle="input" id="input" />
                   <!-- <span onclick="increaseCount(event,this)">+</span> -->
                   <button id="plus" onclick="increaseCount(event,this)">+</button>
                 </div>
@@ -36,10 +38,8 @@
             </div>
             <div class="scart mt-4">
 
-                <form action="{{ route('item.add-to-cart', $produks->id) }}" method="post">
                     @csrf
                     <label for="" class="form-label">{{ $produks->name }}</label>
-                    <input type="number" class="form-control mb-2" name="quantity" value="0">
                     <button type="submit" class="btn btn-primary">Add to cart</button>
                 </form>
                 <hr>
