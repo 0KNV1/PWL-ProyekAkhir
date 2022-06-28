@@ -32,7 +32,7 @@
             <div class="card-body produk-body">
               <h4 class="card-title produk-title">{{$produk->name}}</h4>
               <p class="card-text produk-text" style="font-weight: 10">{{$produk->desc}}</p>
-              <a href="page/detail/detailEsKopiSusu.html" class="btn btn-primary">Lihat Produk</a>
+              <a href="{{url('produk-detail/'.$produk->id)}}" class="btn btn-primary">Lihat Produk</a>
             </div>
           </div>
         </div>
