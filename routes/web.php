@@ -37,6 +37,7 @@ use App\Models\Produk;
 
 Route::get('/', [UserProdukController::class,'index']);
 Route::get('/produk', [UserProdukController::class,'produk']);
+Route::get('/produk-detail/{id}',[UserProdukController::class,'detail']);
 
 Route::get('/detail-kopi', function () {
     return view('detail.detailEsKopiSusu');

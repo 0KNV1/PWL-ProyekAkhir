@@ -24,4 +24,9 @@ class UserProdukController extends Controller
         // dd($produks);
         return view('produk-template.produk',compact('produks'));
     }
+    public function detail($id){
+        $produks = Produk::find($id);
+
+        return view('detail.detail', compact('produks'));
+    }
 }
