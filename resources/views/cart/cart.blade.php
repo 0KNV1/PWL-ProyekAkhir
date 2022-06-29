@@ -22,7 +22,7 @@
             <div class="card-body">
               <div class="row px-0 d-flex align-items-center">
                 <div class="col-lg-2 d-flex justify-content-center">
-                  <img src="{{asset('/assets/img/template/kopisusu.')}}jpg" alt="" class="cart-img ms-3" />
+                  <img src="{{asset('assets/img/'.$cart->produk->image)}}" style="background-image: url({{asset('/assets/img/'.$cart->produk->background)}})" alt="" class="cart-img ms-3" />
                 </div>
                 <div class="col-lg-4">
                   <p class="mb-0">Minuman</p>
@@ -86,14 +86,7 @@
           <div class="card-body pb-0">
             <table class="table table-borderless">
               <tbody>
-                <tr>
-                  <td>Sub Total :</td>
-                  <td class="text-end">Rp 30000</td>
-                </tr>
-                <tr>
-                  <td>Shipping Charge :</td>
-                  <td class="text-end">Rp 5000</td>
-                </tr>
+               
                 <tr class="table-active">
                   <th>Total :</th>
                   <td class="text-end"><span class="fw-bold">Rp  {{$total}}</span></td>

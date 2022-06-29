@@ -39,10 +39,10 @@
             <div class="scart mt-4">
 
                     @csrf
-                    <label for="" class="form-label">{{ $produks->name }}</label>
+                   
                     <button type="submit" class="btn btn-primary">Add to cart</button>
                 </form>
-                <hr>
+                
 
             </div>
           </div>
