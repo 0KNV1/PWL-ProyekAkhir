@@ -86,8 +86,8 @@
                                                 <td>{{ ($produks->currentPage() - 1) * $produks->perPage() + $key + 1 }}</td>
                                                 <td>{{ $produk->name }}</td>
                                                 <td>{{ $produk->price}}</td>
-                                                <td>{{ $produk->image}}</td>
-                                                <td>{{ $produk->background}}</td>
+                                                <td><img src="{{asset('assets/img/'.$produk->image) }}" alt="" style="width: 4em"></td>
+                                                <td><img src="{{asset('assets/img/'.$produk->background) }}" alt="" style="width: 4em"></td>
                                                 <td>{{ $produk->stok}}</td>
                                                 <td>{{ $produk->desc}}</td>
                                                 <td>{{ $produk->created_at}}</td>

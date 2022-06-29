@@ -24,9 +24,9 @@
         </div>
       </div>
       <!-- Row for card -->
-      <div class="row px-0 mx-0">
+      <div class="row px-0 mx-0 justify-content-center">
         @foreach ($produks as $produk)
-        <div class="col-lg-3 col-md-5 mb-md-5 mx-md-auto">
+        <div class="col-lg-3 col-md-5 mb-md-5 mx-md-4">
           <div class="card ms-4 card1 produk" style="background-image: url({{asset('/assets/img/'.$produk->background)}})">
             <img src="{{asset('assets/img/'.$produk->image)}}" alt="kopiSusu" class="card-img-top" />
             <div class="card-body produk-body">
