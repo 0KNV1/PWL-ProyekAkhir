@@ -169,7 +169,6 @@ body {
 .desc {
     font-size: 18px !important;
     font-weight: 300;
-    text-align: justify;
 }
 .arrow {
     justify-content: end !important;
@@ -436,7 +435,7 @@ body {
         margin-left: 25px;
     }
     .cart .nav-link {
-        left: 85%;
+        left: 84%;
         bottom: 17px;
     }
     .lr {
