@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CartResource;
 use App\Models\Cart;
 use App\Models\Produk;
 use App\Models\User;
@@ -9,21 +10,37 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Produk $produk)
+    public function index(Request $request, Cart $cart)
     {
         // dd($request);
-        Cart::Create([
-            'produk_id' => $produk->id,
-            'user_id' => auth()->id(),
-            'quantity' => $request->quantity
-        ]);
-
-        return view('cart.cart')->with('success', 'Berhasil menambah item ke dalam keranjang');
+        $total = 0;
+        
+        
+        $carts = Cart::query()
+            ->with('produk')
+            ->whereBelongsTo($request->user())
+            ->get();
+            $quantity=(clone $carts)->sum('quantity');
+          
+           
+            foreach ($carts as $cart) {
+                $items[] = array(
+                    'price' => $cart->produk->price,
+                    'quantity' => $cart->quantity,         
+                );
+                $total += ($cart->produk->price * $cart->quantity);
+            }
+           
+         
+        return view('cart.cart',['carts'=>CartResource::collection($carts),
+        'quantity'=>$quantity,'total'=>$total]);
+      
     }
 
     /**
@@ -42,9 +59,15 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Produk $produk,Cart $cart)
     {
-        //
+        Cart::create([
+            'produk_id' => $produk->id,
+            'user_id' => auth()->id(),
+            'quantity' => $request->quantity
+        ]);
+
+        return to_route('cart.index')->with('success', 'Berhasil menambah item ke dalam keranjang');
     }
 
     /**
@@ -90,6 +113,6 @@ class CartController extends Controller
     public function destroy(Cart $cart)
     {
         $cart->delete();
-        return view('detail.index')->with('success', 'Berhasil menghapus item di keranjang');
+        return to_route('cart.index')->with('success', 'Berhasil menghapus item di keranjang');
     }
 }
