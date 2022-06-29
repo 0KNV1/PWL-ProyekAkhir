@@ -226,6 +226,7 @@ body {
 
 /* Tambah Keranjang */
 .scart button {
+    color: #000;
     background-color: #fff;
     border: none;
     padding: 10px;

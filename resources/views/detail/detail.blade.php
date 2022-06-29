@@ -39,10 +39,9 @@
             <div class="scart mt-4">
 
                     @csrf
-                   
-                    <button type="submit" class="btn btn-primary">Add to cart</button>
+
+                    <button type="submit" class="btn btn-primary">Tambah Keranjang</button>
                 </form>
-                
 
             </div>
           </div>
