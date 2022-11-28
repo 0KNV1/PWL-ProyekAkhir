@@ -36,7 +36,7 @@ services:
       MYSQL_DATABASE: cloud
       MYSQL_ROOT_PASSWORD: 
       MYSQL_PASSWORD: 
-      MYSQL_USER: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1  
     networks:
       - mynetwork
       
