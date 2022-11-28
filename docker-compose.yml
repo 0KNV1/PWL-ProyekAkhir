@@ -1,47 +1,45 @@
 version: "3.7"
 services:
+
+#Laravel App
   app:
     build:
       args:
-        user: ian
+        user: alfa
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: gallery
-    container_name: gallery-app
+    image: laravel-app
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./:/var/www
     networks:
-      - gallery
-
-  db:
-    image: mysql:8.0
-    container_name: gallery-db
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: gallery
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_PASSWORD:
-      MYSQL_USER: root
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    networks:
-      - gallery
-
+      - mynetwork
+    
+ #Nginx Service
   nginx:
     image: nginx:alpine
-    container_name: gallery-nginx
     restart: unless-stopped
     ports:
       - 8000:80
     volumes:
       - ./:/var/www
-      - ./docker-compose/nginx:/etc/nginx/conf.d/
+      - ./nginx/conf.d:/etc/nginx/conf.d/
     networks:
-      - gallery
-
+      - mynetwork
+  #Mysl Service
+  db:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: cloud
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_PASSWORD: 
+      MYSQL_USER: root
+    networks:
+      - mynetwork
+      
 networks:
-  gallery:
+  mynetwork:
     driver: bridge
